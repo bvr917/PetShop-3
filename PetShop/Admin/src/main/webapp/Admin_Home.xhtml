@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+
+         <title>Product Management</title>
+        
+      
+      <h:outputStylesheet library="css" name="style.css"  />
+      
+</h:head> 
+
+<h:body>
+
+	<f:view>
+		
+		<h:form id="adminHome">
+				
+			
+				
+				<table align="center" border="1">
+				
+					
+					<tr>
+					
+					<td>
+					<div class="section">
+	                   <ui:insert name="search_template" >
+            			<ui:include src="/templates/SearchTemplate.xhtml" />
+        		    	</ui:insert>  
+        		    	</div>
+	                </td>
+					
+					</tr>
+				
+			
+					<tr>  
+					
+	                <td>
+	                <div class="nav">
+	                <ui:insert name="products_summary" >
+            			<ui:include src="products_summary.xhtml" />
+        		    </ui:insert>  
+	                </div>
+	                
+	                </td>
+	                
+               		</tr>
+               		
+				</table>
+		
+		</h:form>
+			
+	</f:view>
+
+
+</h:body>
+
+
+
+</html>

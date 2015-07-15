@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+</h:head> 
+
+<body bgcolor="#FFFFFF" text="#000000">
+
+
+<table width="530" border="0" cellspacing="0" cellpadding="0" align="center" >
+
+<tr>
+
+<td align="center" width="139" bgcolor="#CCCCCC" ><h:graphicImage value="/resources/images/logo.jpg" width="234" height="100" border="0"/></td>
+
+</tr>
+
+</table>
+
+ <table width="530" border="0" cellspacing="0" cellpadding="0" align="center">
+
+ <h:form>
+ 
+ <tr> 
+      <td align="right" bgcolor="#CCCCCC"></td>
+      
+      <td height="116" align="left" valign="top" bgcolor="#CCCCCC" width="392"> 
+      <table width="300" border="0" cellspacing="2" cellpadding="0" align="center">
+      
+      <tr>
+      
+      <td>
+      <h:outputLabel value="Login Failed" rendered="#{loginController.loginStatusFailed}"  styleClass="header" />
+      
+      
+      </td>
+      
+      </tr>
+      <tr>
+      
+      <td><h:outputText value="User ID" /></td>  
+                    <td><h:inputText id="inputName" value="#{loginController.user_name}"  
+                            required="true" requiredMessage="User Name field must not be empty" />  
+                    </td>  
+                    <td><h:message for="inputName" style="color:red" /></td> 
+                    
+     	 </tr>
+      	<tr>  
+                    <td><h:outputText value="Password" /></td>  
+                    <td><h:inputSecret id="inputPassword" value="#{loginController.password}"  
+                            required="true"  
+                            requiredMessage="Password field must not be empty" /></td>  
+                    <td><h:message for="inputPassword" style="color:red" /></td>  
+                </tr>  
+                <tr>  
+                <td>
+                </td>
+                    <td align ="center"><h:commandButton action="#{loginController.validateUser}"  value="Submit" /></td>  
+                </tr>
+                   
+      </table>
+      
+      </td>
+  </tr>
+  </h:form>
+  
+  </table>    
+
+</body> 
+</html>

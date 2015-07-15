@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+      
+		<head>
+		<title><ui:insert name="pageTitle">PetShop Supplies</ui:insert></title>
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+			.table {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20x;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+		</style>
+		</head>
+
+<body bgcolor="#ffffff">
+<table style="border:1px solid #CAD6E0"   align="center" cellpadding="0" cellspacing="0" border="0" width="100%" >
+<tbody>
+
+	<tr>
+	<ui:insert name="common_template" >
+            			<ui:include src="/templates/CommonPage.xhtml" />
+        		    	</ui:insert>  
+	</tr>
+	
+	<tr >
+	
+	<td width="50%">
+	
+	</td>
+	
+	<td width="50%" height="100">
+	<h:form id="UserLogin" >
+	
+		<table style="border:1px solid #CAD6E0"  align="center" height="150px" cellpadding="0" cellspacing="0" border="0" width="30%" >
+		
+		<tr>
+			
+			<td>
+				<h:outputLabel value="User Name :" />			
+			</td>
+			<td>
+				<h:inputText id = "userName" value="#{loginController.user_name}" required="true" requiredMessage="UserName is Mandatory"/>
+				<h:message for="userName" style="color:red"/>
+			</td>
+		
+		</tr>
+		<tr>
+			
+			<td>
+				<h:outputLabel value="Password :" />			
+			</td>
+			<td>
+				<h:inputSecret id = "password" value="#{loginController.password}" required="true" requiredMessage="Password is Mandatory"/>
+				<h:message for="password" style="color:red"/>
+			</td>
+		
+		</tr>
+		<tr>
+			<td></td>
+			<td align="center">
+				<h:commandLink type="Submit" actionListener="#{loginController.validateUser}" action="Success">
+					
+					<h:graphicImage value="/resources/images/button_enter_en.gif" />
+				
+				</h:commandLink>
+				&nbsp;&nbsp;&nbsp;
+				<h:commandLink action="User_Register" type="Submit" value="Register">
+				
+				</h:commandLink>
+			</td>
+		
+		</tr>
+		
+		</table>
+	
+	</h:form>
+	
+	</td>
+	</tr>
+	
+	<tr>
+	
+	<ui:insert name="common_template" >
+            			<ui:include src="/templates/UserCartTemplate.xhtml" />
+        		    	</ui:insert>  
+	</tr>
+	
+	<tr>
+		<td colspan="2"  valign="bottom" height="1" width="100%" bgcolor="#CAD6E0"></td>
+	</tr>
+</tbody>
+</table>
+</body>
+		
+</html>

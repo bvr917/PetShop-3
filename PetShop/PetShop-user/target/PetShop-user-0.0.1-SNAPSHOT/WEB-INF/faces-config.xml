@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+ <navigation-rule>
+  <from-view-id>/User_Home.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>Product_Details</from-outcome>
+   <to-view-id>/Product_Details.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+  <from-view-id>/Product_Details.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>User_Home</from-outcome>
+   <to-view-id>/User_Home.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/User_Login.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>Success</from-outcome>
+   <to-view-id>/User_Home.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/User_Home.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>Success</from-outcome>
+   <to-view-id>/User_Login.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/User_Register.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>Register</from-outcome>
+   <to-view-id>/User_Register.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+  <from-view-id>/User_Home.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>BuyProducts</from-outcome>
+   <to-view-id>/Buy_Products.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+  <from-view-id>/User_Home.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>User_Orders</from-outcome>
+   <to-view-id>/User_Orders.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <application>
+  <locale-config>
+   <default-locale>en</default-locale>
+   <supported-locale>fr</supported-locale>
+  </locale-config>
+  <resource-bundle>
+   <base-name>com.cg.petshop.messagebundle</base-name>
+   <var>msg</var>
+  </resource-bundle>
+ </application>
+
+
+</faces-config>

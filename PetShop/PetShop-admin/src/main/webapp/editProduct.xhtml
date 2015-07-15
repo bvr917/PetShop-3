@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+
+         <title>Product Management</title>
+         
+      
+</h:head> 
+
+<f:event listener="#{productManagerBean.productView}" type="preRenderView"></f:event>
+
+<h:body>
+
+	<f:view>
+		
+		<h:form id="editProduct">
+		
+		
+				
+				<table align="center" border="0">	
+		
+				<tr>  
+					
+					<td align="center">
+	                   <ui:insert name="side_navigation" >
+            			<ui:include src="Admin.xhtml" />
+        		    	</ui:insert> 
+	                </td>
+	                
+	           </tr>
+				
+				<tr>	
+				
+					<td>
+					
+					<table>
+					
+					<tr>
+					<td>
+					
+	                   <ui:insert name="side_navigation" >
+            			<ui:include src="Admin_Functions.xhtml" />
+        		    	</ui:insert>  
+        		    </td>	
+	               
+			
+				<td>
+				
+				<table>
+				
+					<tr>  
+	                    <td><h:outputText value="Product Id" /></td> 
+	                    <td>
+						<h:outputLabel value="#{productManagerBean.newProduct.productId}" />	
+						<h:inputHidden value="#{productManagerBean.newProduct.productId}"/>                            
+	                     </td>  
+	                    <td><h:message for="pId" style="color:red" /></td>  
+               		</tr>
+               		 
+               		<tr>  
+	                    <td><h:outputText value="Product Name:" /></td>  
+	                    <td><h:inputText id="pName" value="#{productManagerBean.newProduct.name}"  
+	                            required="true" requiredMessage="Please enter product name" /></td>  
+	                    <td><h:message for="pName" style="color:red" /></td>  
+	                </tr>
+
+					<tr>  
+	                    <td><h:outputText value="Product Description:" /></td>  
+	                    <td><h:inputText id="pDesc" value="#{productManagerBean.newProduct.description}"  
+	                            required="true" requiredMessage="Please enter Product Description" /></td>  
+	                    <td><h:message for="pDesc" style="color:red" /></td>  
+	                </tr>
+	                
+	                <tr>
+	                
+	                <td><h:outputText value="Product Category:" /></td> 
+	                 <td><h:selectOneMenu value="#{productManagerBean.newProduct.category}">
+            
+           				 <f:selectItems value="#{productCategoryBean.availableProductCategories}" var="pc" itemLabel="#{pc.name}" itemValue="#{pc.category}" />
+            
+          			</h:selectOneMenu></td>
+          			
+	                </tr>
+	                
+	                <tr>  
+	                    <td><h:outputText value="Cost of the Product:" /></td>  
+	                    <td><h:inputText id="pPrice" value="#{productManagerBean.newProduct.price}"  
+	                            required="true" requiredMessage="Please enter Product Cost" /></td>  
+	                    <td><h:message for="pPrice" style="color:red" /></td>  
+	                </tr>
+					
+					<tr>  
+	                    <td><h:outputText value="No of Products Available:" /></td>  
+	                    <td><h:inputText id="pQuantity" value="#{productManagerBean.newProduct.quantity}"  
+	                            required="true" requiredMessage="Please enter Quantity of Products" /></td>  
+	                    <td><h:message for="pQuantity" style="color:red" /></td>  
+	                </tr>
+	                
+	                <tr>  
+	                    <td><h:outputText value="Product Image" /></td>  
+	                    <td>
+	                   <p:graphicImage value="#{productManagerBean.imageSource}" cache="FALSE" >
+	                   	<f:param name="pID" value="#{productManagerBean.newProduct.productId}"></f:param>
+	                   </p:graphicImage>
+	                    </td>  
+	                </tr>
+						
+					<tr>  
+                    	<td />  
+                    	<td align="center">
+                    	<h:commandButton value="Update" actionListener="#{productManagerBean.editProduct}"  action="editSelected" />
+                    	</td>
+                    	
+                    	
+                	</tr>  
+                 </table>
+                
+                </td>
+                </tr>	
+                
+               
+                			
+				
+				</table>
+				</td>
+				</tr>
+				</table>
+				
+		
+		</h:form>
+			
+	</f:view>
+
+
+</h:body>
+
+
+
+</html>

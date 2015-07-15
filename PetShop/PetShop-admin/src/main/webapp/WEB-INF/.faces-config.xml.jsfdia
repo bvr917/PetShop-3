@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#products_summary.xhtml"
+  PATH="/products_summary.xhtml" SHAPE="256,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#products_summary.xhtml:0" NAME="item"
+   PATH="/products_summary.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="deleteProduct::#products_summary.xhtml"
+    NAME="output" PATH="/products_summary.xhtml"
+    TARGET="rules:#products_summary.xhtml" TITLE="deleteProduct" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Welcome.xhtml" PATH="/Welcome.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Welcome.xhtml:0" NAME="item"
+   PATH="/Welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Success::#products_summary.xhtml"
+    NAME="output" PATH="/products_summary.xhtml"
+    TARGET="rules:#products_summary.xhtml" TITLE="Success" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="Failed::#Welcome.xhtml" NAME="output1"
+    PATH="/Welcome.xhtml" TARGET="rules:#Welcome.xhtml" TITLE="Failed" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Admin.xhtml" PATH="/Admin.xhtml"
+  SHAPE="48,161,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Admin.xhtml:0" NAME="item"
+   PATH="/Admin.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="product_summary::#products_summary.xhtml"
+    NAME="output" PATH="/products_summary.xhtml"
+    TARGET="rules:#products_summary.xhtml" TITLE="product_summary" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#editProduct.xhtml" PATH="/editProduct.xhtml"
+  SHAPE="496,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#editProduct.xhtml:0" NAME="item"
+   PATH="/editProduct.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="editSelected::#products_summary.xhtml"
+    NAME="output" PATH="/products_summary.xhtml"
+    TARGET="rules:#products_summary.xhtml" TITLE="editSelected" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#categories_summary.xhtml"
+  PATH="/categories_summary.xhtml" SHAPE="32,273,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#categories_summary.xhtml:0" NAME="item"
+   PATH="/categories_summary.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="editProductCategory::#editProductCategory.xhtml" NAME="output"
+    PATH="/editProductCategory.xhtml"
+    TARGET="rules:#editProductCategory.xhtml"
+    TITLE="editProductCategory" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#editProductCategory.xhtml"
+  PATH="/editProductCategory.xhtml" SHAPE="240,289,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#newProductCategory.xhtml"
+  PATH="/newProductCategory.xhtml" SHAPE="32,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#newProductCategory.xhtml:0" NAME="item"
+   PATH="/newProductCategory.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT
+    ID="newProductCategory::#newProductCategory.xhtml" NAME="output"
+    PATH="/newProductCategory.xhtml"
+    TARGET="rules:#newProductCategory.xhtml" TITLE="newProductCategory" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

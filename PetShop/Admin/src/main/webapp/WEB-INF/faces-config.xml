@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+ 
+ <navigation-rule>
+  <from-view-id>/editProduct.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>editSelected</from-outcome>
+   <to-view-id>/products_summary.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <from-view-id>/Welcome.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>Success</from-outcome>
+   <to-view-id>/products_summary.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>Failed</from-outcome>
+   <to-view-id>/Welcome.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/Admin.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>product_summary</from-outcome>
+   <to-view-id>/products_summary.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/products_summary.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>deleteProduct</from-outcome>
+   <to-view-id>/products_summary.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/categories_summary.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>editProductCategory</from-outcome>
+   <to-view-id>/editProductCategory.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <from-view-id>/newProductCategory.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>newProductCategory</from-outcome>
+   <to-view-id>/newProductCategory.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <application>
+  <locale-config>
+   <default-locale>en</default-locale>
+   <supported-locale>fr</supported-locale>
+  </locale-config>
+  <resource-bundle>
+   <base-name>com.cg.petshop.messagebundle</base-name>
+   <var>msg</var>
+  </resource-bundle>
+ </application>
+</faces-config>

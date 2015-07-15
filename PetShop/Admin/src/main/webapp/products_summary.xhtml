@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+
+<h:outputStylesheet library="css" name="style.css"></h:outputStylesheet>
+
+</h:head> 
+<body> 
+<h:form id = "actions">
+
+
+<table align = "center" width="100%">
+				
+					<tr>  
+					
+					<td align="center">
+	                   <ui:insert name="side_navigation" >
+            			<ui:include src="Admin.xhtml" />
+        		    	</ui:insert> 
+	                </td>
+	                
+	                </tr>
+	                <tr>
+	                
+	                <td>
+	                
+	                <table width="100%">
+	                
+	                <tr>
+	                <td width="35%">
+	                 <ui:insert name="side_navigation" >
+            			<ui:include src="Admin_Functions.xhtml" />
+        		    	</ui:insert> 
+	                </td>
+	              
+	      <td width="65%" >          
+	<h:panelGrid>
+  <h:dataTable value="#{productManagerBean.availableProducts}" var="products"
+               border="1" frame="none" style="width:50px;"  rendered="true" rowSelection="single" styleClass="table"
+    		headerClass="table-header"
+    		rowClasses="table-odd-row,table-even-row" >
+               
+    <h:column>
+      <f:facet name="header">
+        <h:outputText value="#{msg['product_ID']}"/>
+      </f:facet>
+       <h:link outcome="/editProduct.xhtml" value="#{products.productId}" >
+     		 <f:param name="id" value="#{products.productId}" />
+   		</h:link>
+    </h:column>
+    <h:column>
+      <h:outputText value="#{products.name}"/>
+      <f:facet name="header">
+        <h:outputText value="#{msg['product_name']}"/>
+      </f:facet>
+    </h:column>
+    <h:column>
+      <h:outputText value="#{products.category}"/>
+      <f:facet name="header">
+        <h:outputText value="#{msg['product_category']}"/>
+      </f:facet>
+    </h:column>
+    <h:column>
+      <h:outputText value="#{products.price}"/>
+      <f:facet name="header">
+        <h:outputText value="#{msg['product_price']}"/>
+      </f:facet>
+    </h:column>
+    <h:column>
+      <h:outputText value="#{products.quantity}"/>
+      <f:facet name="header">
+        <h:outputText value="#{msg['product_qty']}"/>
+      </f:facet>
+    </h:column>
+     <h:column>
+      <h:outputText value="#{products.description}"/>
+      <f:facet name="header">
+        <h:outputText value="#{msg['product_description']}"/>
+      </f:facet>
+    </h:column>
+    <h:column>
+      <f:facet name="header">
+        <h:outputText value="#{msg['editProduct']}"/>
+      </f:facet>
+      <h:commandButton value="edit"
+                       type="submit"
+                       actionListener="#{productManagerBean.editSelectedProduct}"
+                       action="editProduct">
+          <f:param name="productId"
+                   value="#{products.productId}"/>
+      </h:commandButton>
+    </h:column>
+     <h:column>
+      <f:facet name="header">
+        <h:outputText value="#{msg['deleteProduct']}"/>
+      </f:facet>
+      <h:commandButton value="delete"
+                       type="submit"
+                       actionListener="#{productManagerBean.deleteSelectedProduct}"
+                       action="deleteProduct">
+        <f:facet name="extraParameter">
+          <f:param name="productId"
+                   value="#{products.productId}"/>
+        </f:facet>
+      </h:commandButton>
+    </h:column>
+    <f:facet name="header">
+      <h:outputText value="Available Products" styleClass="header"/>
+    </f:facet>
+  </h:dataTable>
+</h:panelGrid>
+<h:commandButton action="newProduct" value="#{msg['newProduct']}"/>
+</td>
+</tr>
+</table>
+
+ </td>
+	                
+               		</tr>
+
+</table>
+</h:form>
+
+</body> 
+</html>

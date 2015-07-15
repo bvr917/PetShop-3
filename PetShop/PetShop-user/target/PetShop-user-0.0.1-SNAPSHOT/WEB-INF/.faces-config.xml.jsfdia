@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#User_Home.xhtml" PATH="/User_Home.xhtml"
+  SHAPE="32,129,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#User_Home.xhtml:0" NAME="item"
+   PATH="/User_Home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Product_Details::#Product_Details.xhtml"
+    NAME="output" PATH="/Product_Details.xhtml"
+    TARGET="rules:#Product_Details.xhtml" TITLE="Product_Details" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#User_Home.xhtml:1" NAME="item1"
+   PATH="/User_Home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Success::#User_Login.xhtml" NAME="output"
+    PATH="/User_Login.xhtml" TARGET="rules:#User_Login.xhtml"
+    TITLE="Success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#User_Home.xhtml:2" NAME="item2"
+   PATH="/User_Home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="BuyProducts::#Buy_Products.xhtml"
+    NAME="output" PATH="/Buy_Products.xhtml"
+    TARGET="rules:#Buy_Products.xhtml" TITLE="BuyProducts" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#User_Home.xhtml:3" NAME="item3"
+   PATH="/User_Home.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="User_Orders::#User_Orders.xhtml"
+    NAME="output" PATH="/User_Orders.xhtml"
+    TARGET="rules:#User_Orders.xhtml" TITLE="User_Orders" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Product_Details.xhtml"
+  PATH="/Product_Details.xhtml" SHAPE="240,145,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#Product_Details.xhtml:0" NAME="item"
+   PATH="/Product_Details.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="User_Home::#User_Home.xhtml" NAME="output"
+    PATH="/User_Home.xhtml" TARGET="rules:#User_Home.xhtml"
+    TITLE="User_Home" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#User_Login.xhtml" PATH="/User_Login.xhtml"
+  SHAPE="48,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#User_Login.xhtml:0" NAME="item"
+   PATH="/User_Login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Success::#User_Home.xhtml" NAME="output"
+    PATH="/User_Home.xhtml" TARGET="rules:#User_Home.xhtml"
+    TITLE="Success" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#User_Register.xhtml"
+  PATH="/User_Register.xhtml" SHAPE="48,385,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#User_Register.xhtml:0" NAME="item"
+   PATH="/User_Register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Register::#User_Register.xhtml"
+    NAME="output" PATH="/User_Register.xhtml"
+    TARGET="rules:#User_Register.xhtml" TITLE="Register" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#Buy_Products.xhtml"
+  PATH="/Buy_Products.xhtml" SHAPE="288,321,0,0" model-entity="JSFProcessGroup"/>
+ <PROCESS-ITEM NAME="rules:#User_Orders.xhtml" PATH="/User_Orders.xhtml"
+  SHAPE="304,33,0,0" model-entity="JSFProcessGroup"/>
+</PROCESS>

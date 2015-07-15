@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+      
+		<head>
+		<title><ui:insert name="pageTitle">PetShop Supplies</ui:insert></title>
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+			.table {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20x;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+		</style>
+		</head>
+
+<body bgcolor="#ffffff">
+<table style="border:1px solid #CAD6E0"   align="center" cellpadding="0" cellspacing="0" border="0" width="100%" >
+<tbody>
+
+	<tr>
+	<ui:insert name="common_template" >
+            			<ui:include src="/templates/CommonPage.xhtml" />
+        		    	</ui:insert>  
+	</tr>
+	
+	<tr >
+	
+	<td width="50%">
+	
+	</td>
+	
+	<td width="50%" height="100">
+	<h:form id="BuyProduct" >
+	
+		<table style="border:1px solid #CAD6E0"  align="center" height="150px" cellpadding="0" cellspacing="0" border="0" width="30%" >
+		
+		<tr>
+		
+		<td colspan="2" class="header" height="42" align="center" valign="middle" width="100%" bgcolor="#E4EBEB" bordercolor="blue">
+		
+							<h:panelGrid>
+										<h:dataTable value="#{buyOrCheckOut.boughtProductDetails}"
+											var="orders" border="0" frame="none" style="width:700px;"
+											rendered="true" rowSelection="single" styleClass="table"
+											headerClass="table-header"
+											rowClasses="table-odd-row,table-even-row" bgcolor="white">
+
+											<h:column>
+											<h:outputText value="#{orders.product_id}"/>
+												<f:facet name="header">
+													<h:outputText value="#{msg['product_ID']}" />
+												</f:facet>
+											</h:column>
+											<h:column>
+											<h:outputText value="#{orders.prd_name}"/>
+												<f:facet name="header">
+													<h:outputText value="#{msg['product_name']}" />
+												</f:facet>
+											</h:column>
+											<h:column>
+												<h:outputText value="#{orders.prd_quantity}" converter="javax.faces.Number"/>
+											      <f:facet name="header">
+											        <h:outputText value="Quantity"/>
+											      </f:facet>
+												
+											</h:column>
+											<h:column>
+												<h:outputText value="#{orders.individual_prd_price}"/>
+											      <f:facet name="header">
+											        <h:outputText value="Price Per Product"/>
+											      </f:facet>
+												
+											</h:column>
+											<h:column>
+												<h:outputText value="#{orders.price_per_product}"/>
+											      <f:facet name="header">
+											        <h:outputText value="Total Cost"/>
+											      </f:facet>
+												
+											</h:column>
+											<f:facet name="header">
+												<h:outputText value="Your Products In Cart" styleClass="header"  rendered="#{!buyOrCheckOut.fromOrderSummary}"  style="background-color:white; color:Blue;"/>
+												<h:outputText value="Items In Order" styleClass="header"  rendered="#{buyOrCheckOut.fromOrderSummary}"  style="background-color:white; color:Blue;"/>
+												
+											</f:facet>
+										</h:dataTable>
+									</h:panelGrid>
+
+								</td>
+										
+		
+		
+		</tr>
+		
+		<tr>
+		
+								
+			<td colspan="1" align="center">
+				
+				<h:commandButton  type="submit"   value="CONFIRM ORDER" style="background-color:#80BFFF; color:Blue;width=150px;" action="Confirm_Order" actionListener="#{orderManager.confirmOrder}"> </h:commandButton>
+				
+			</td>
+			<td colspan="1">
+				
+				<h:commandButton  action="/User_Home.xhtml" value="CONITUE WITH SHOPPING" style="background-color:white; color:Blue;"></h:commandButton>
+				
+			</td>	
+		
+		</tr>
+		
+		</table>
+	
+	</h:form>
+	
+	</td>
+	</tr>
+	
+	<tr>
+	
+	<ui:insert name="common_template" >
+            			<ui:include src="/templates/UserCartTemplate.xhtml" />
+        		    	</ui:insert>  
+	</tr>
+	
+	<tr>
+		<td colspan="2"  valign="bottom" height="1" width="100%" bgcolor="#CAD6E0"></td>
+	</tr>
+</tbody>
+</table>
+</body>
+		
+</html>

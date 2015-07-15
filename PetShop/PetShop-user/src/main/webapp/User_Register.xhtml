@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:mj="http://mojarra.dev.java.net/mojarra_ext">
+      
+		<head>
+		<title><ui:insert name="pageTitle">PetShop Supplies</ui:insert></title>
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+			.table {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 20x;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+		</style>
+		</head>
+
+<body bgcolor="#ffffff">
+<table style="border:1px solid #CAD6E0"   align="center" cellpadding="0" cellspacing="0" border="0" width="100%" >
+<tbody>
+
+	<tr>
+	<ui:insert name="common_template" >
+            			<ui:include src="/templates/CommonPage.xhtml" />
+        		    	</ui:insert>  
+	</tr>
+	
+	<tr >
+	
+	<td width="50%">
+	
+	</td>
+	
+	<td width="50%" height="100">
+	<h:form id="UserLogin" rendered="#{!userRegister.userRegister}">
+	
+		<table style="border:1px solid #CAD6E0"  align="center" height="250px" cellpadding="0" cellspacing="0" border="0" width="30%" >
+		
+		<tr>
+            <td>Name:</td>
+            <td><h:inputText id="name" value="#{userRegister.newUser.name}" required="true"
+                requiredMessage="Enter name!" label="name" maxlength="20"  /></td>
+            <td><h:message for="name" style="color:red;" /></td>
+        </tr>
+        <tr>
+            <td>User Name:</td>
+            <td><h:inputText id="userName" value="#{userRegister.newUser.user_id}" required="true"
+                requiredMessage="Enter name!" label="name" maxlength="20"/></td>
+            <td><h:message for="name" style="color:red;" /></td>
+        </tr>
+        <tr>
+            <td>Password:</td>
+            <td><h:inputSecret id="password" value="#{userRegister.newUser.password}"
+                required="true" requiredMessage="Enter Password!" label="password"
+                maxlength="15" redisplay="true" /></td>
+            <td><h:message for="password" style="color:red;" /></td>
+        </tr>
+        <tr>
+            <td>Email:</td>
+            <td><h:inputText id="email" value="#{userRegister.newUser.email}"
+                required="true" requiredMessage="Enter Email!" label="email"
+                maxlength="50" /></td>
+            <td><h:message for="email" style="color:red;" /></td>
+        </tr>
+        <tr>
+            <td>Contact no:</td>
+            <td><h:inputText id="contact" value="#{userRegister.newUser.phone_number}"
+                required="true" requiredMessage="Enter Contact no!" label="contact"
+                maxlength="12"  /></td>
+            <td><h:message for="contact" style="color:red;" /></td>
+        </tr>
+        <tr>
+            <td>Address:</td>
+            <td><h:inputTextarea id="address" value="#{userRegister.newUser.address}"
+                required="true" requiredMessage="Enter Adrdess!" label="address"
+                maxlength="100" cols="15" /></td>
+            <td><h:message for="address" style="color:red;" /></td>
+        </tr>
+
+        <tr>
+            <td colspan="3" align="center"><h:commandButton id="btn"
+                value="Register" type="submit" actionListener="#{userRegister.registerNewUser}" action="Register">
+                <f:param name="Role" value="N"></f:param>
+                </h:commandButton>
+                </td>
+        </tr>
+		
+		</table>
+	
+	</h:form>
+	
+		<h:form id="RegisterSuccess" rendered="#{userRegister.userRegister}">
+			<h3> <h:outputText value="Registration SuccessFull " />
+			<h:commandLink action="/User_Login.xhtml" value="click here" ></h:commandLink>
+			<h:outputText value=" To Login" /> </h3>
+		</h:form>
+	
+	
+	</td>
+	</tr>
+	
+	<tr>
+	
+	<ui:insert name="common_template" >
+            			<ui:include src="/templates/UserCartTemplate.xhtml" />
+        		    	</ui:insert>  
+	</tr>
+	
+	<tr>
+		<td colspan="2"  valign="bottom" height="1" width="100%" bgcolor="#CAD6E0"></td>
+	</tr>
+</tbody>
+</table>
+</body>
+		
+</html>

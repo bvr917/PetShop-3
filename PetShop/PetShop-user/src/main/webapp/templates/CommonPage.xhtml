@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+      
+		<head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+			
+			.cart{
+			position:absolute; top:40%; left:80%; width:200px; height:25px
+		
+			}
+		</style>
+		</head>
+
+<body bgcolor="#ffffff">
+<table style="border:1px solid #CAD6E0"  align="center" cellpadding="2" cellspacing="0" border="2" width="100%">
+<tbody>
+	<h:form id="Search">
+	<tr>
+	
+		<td class="header" height="42" align="center"  width="25%" bgcolor="#E4EBEB">
+			<ui:insert name="pageHeader">Pet Shop Supplies</ui:insert>
+		</td>
+		<td class="header" height="42" align="center" valign="middle" width="75%" bgcolor="#E4EBEB">
+			<ui:insert name="search_template" >
+            			<ui:include src="/templates/SearchTemplate.xhtml" />
+        		    	</ui:insert>  
+		</td>
+	</tr>
+	</h:form>
+	
+	<tr>
+		<table style="border:1px solid #CAD6E0"  align="center" cellpadding="2" cellspacing="0" border="1" width="100%">
+		
+		<tbody>
+		
+		<tr>
+		<h:form id="SearchByCat">
+		<td class="header" height="42" align="center"  width="50" bgcolor="#E4EBEB">
+			
+			
+			<ui:repeat var="pc" value="#{productManagerBean.availableProductCategories}" >
+			
+			<h:commandLink value="#{pc.name}" actionListener="#{productManagerBean.searchProductsByCategory}">
+			<f:param name="PC" value="#{pc.category}"></f:param>
+			</h:commandLink>
+			&nbsp;&nbsp;&nbsp;
+			</ui:repeat>
+		</td>
+		</h:form>
+		<h:form id="SearchByCat1">
+		<td class="header" height="42" align="center" valign="middle" width="50" bgcolor="#E4EBEB">
+			
+			<h:outputLink value="User_Orders.xhtml" rendered="#{loginController.userLoggedIn}">Your Orders
+			</h:outputLink>
+			&nbsp;&nbsp;&nbsp;
+			<h:commandLink value="Your Account" actionListener="#{productManagerBean.searchProductsByCategory}" rendered="#{loginController.userLoggedIn}">
+			</h:commandLink>
+			
+		</td>
+		</h:form>
+		</tr>
+		
+		</tbody>
+		</table>
+	
+	</tr>
+	
+	
+</tbody>
+</table>
+</body>
+		
+</html>

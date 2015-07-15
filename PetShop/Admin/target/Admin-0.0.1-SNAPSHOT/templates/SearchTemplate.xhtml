@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+<title>Welcome to Pet Shop Supplies</title>
+<h:outputStylesheet lib="css" name="style"></h:outputStylesheet>
+</h:head>
+ 
+<body align = "center"> 
+<div class="header">
+<h2 align="center"><h:outputText value="#{msg['welcome_message']}" /></h2>
+</div>
+
+ <f:view>
+        <h:form >
+        
+        <table border="1">
+            
+	<tr >
+	
+		<td>
+		
+	
+		<div class="section">
+		<h3><h:outputText value="#{msg['search_message']}" /></h3>
+          <h:selectOneMenu value="#{productsearchmanagedbean.productCategory}">
+            
+            <f:selectItems value="#{productsearchmanagedbean.availableProductCategories}" var="pc" itemLabel="#{pc.name}" itemValue="#{pc.category}" />
+            
+          </h:selectOneMenu>
+            
+          <h:inputText value='#{productsearchmanagedbean.productName}'/>
+          <h:commandButton action="#{productsearchmanagedbean.searchForProduct}" value="Search"/>
+          
+          </div>
+          </td>
+          
+          <td>
+           
+           <h:outputLink value="AdminLogin.xhtml">LogOut</h:outputLink>
+          
+          </td>
+    </tr>
+    
+    </table>
+       
+        </h:form>
+  </f:view>
+
+
+</body> 
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>  
+    <title>Login Page</title>  
+</h:head>  
+
+<body >
+
+	<h:body>	
+    <f:view>  
+        <h:form id="loginForm">  
+            <table align = "center">  
+                <tr>  
+                    <th>Login Page</th>  
+                </tr>  
+                <tr>  
+                    <td><h:outputText value="#{msg['user_name']}" /></td>  
+                    <td><h:inputText id="inputName" value="#{user.firstName}"  
+                            required="true" requiredMessage="Name field must not be empty" />  
+                    </td>  
+                    <td><h:message for="inputName" style="color:red" /></td>  
+                </tr>  
+                <tr>  
+                    <td><h:outputText value="#{msg['password']}"/></td>  
+                    <td><h:inputSecret id="inputPassword" value="#{user.password}"  
+                            required="true"  
+                            requiredMessage="Password field must not be empty" /></td>  
+                    <td><h:message for="inputPassword" style="color:red" /></td>  
+                </tr>  
+                <tr>  
+                    <td><h:commandButton value="Sign In" action="#{user.login}" /></td>  
+                    <td><h:outputText value="Not a User " />   
+                        <h:outputLink value="Register.xhtml">Sign Up</h:outputLink>  
+                    </td>  
+                </tr>  
+            </table>  
+        </h:form>  
+    </f:view>  
+</h:body> 
+</body>
+</html>

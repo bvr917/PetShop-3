@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"> 
+      
+		<head>
+		<title><ui:insert name="pageTitle">Page Title</ui:insert></title>
+		
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+			
+			.cart{
+			position:absolute; top:40%; left:80%; width:200px; height:25px
+		
+			}
+		</style>
+		</head>
+
+<body bgcolor="#ffffff">
+<table style="border:1px solid #CAD6E0"  align="center" cellpadding="2" cellspacing="0" border="2" width="100%">
+<tbody>
+	<h:form>
+	
+
+	
+	<tr >
+	<table style="border:0px solid #CAD6E0"  align="center" cellpadding="2" cellspacing="0" border="0" width="100%">
+	<tr>
+	
+	<td width="20%" align="right">
+	
+		<div STYLE="position:absolute; top:40%; left:80%; width:200px; height:35px">
+		<h:commandLink action="/Buy_Products.xhtml">
+		<h:outputLabel value="#{buyOrCheckOut.noOfProductsInCart}"  style="position:absolute; top:65%; left:39%; width:80px; height:50px" ></h:outputLabel>
+		<h:graphicImage value="/resources/images/cart.png" width="75" title="venkat" >
+		</h:graphicImage>
+		</h:commandLink>
+		</div>
+		
+	</td>
+	</tr>
+	<tr>
+	
+	<td width="20%" align="right">
+	
+		<div STYLE="position:absolute; top:50%; left:80%; width:250px; height:160px">
+		<h:outputLink value="Buy_Products.xhtml" id="BuyProducts" >
+		<h:graphicImage value="/resources/images/buynow.jpg" width="150" title="venkat" >
+		</h:graphicImage>
+		</h:outputLink>
+		</div>
+		
+	</td>
+	</tr>
+	</table>
+	
+	</tr>	
+	
+
+	
+	</h:form>
+</tbody>
+</table>
+</body>
+		
+</html>

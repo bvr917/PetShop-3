@@ -1,0 +1,4 @@
+com\cg\petshop\jsf\ProductManagerBean.class
+com\cg\petshop\service\ProductManagerService.class
+com\cg\petshop\jsf\ProductCategoryManagerBean.class
+com\cg\petshop\service\ProductManagerServiceImpl.class

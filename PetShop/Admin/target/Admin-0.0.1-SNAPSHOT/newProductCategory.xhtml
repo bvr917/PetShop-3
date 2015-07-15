@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+
+         <title>Product Management</title>
+         
+      
+</h:head> 
+
+<f:event listener="#{productCategoryBean.generateNewProductCategoryID}" type="preRenderView"></f:event>
+
+
+<h:body>
+
+	<f:view>
+		
+		<h:form id="newProduct">
+		
+		
+				
+				<table align="center" border="0">	
+		
+				<tr>  
+					
+					<td align="center">
+	                   <ui:insert name="side_navigation" >
+            			<ui:include src="Admin.xhtml" />
+        		    	</ui:insert> 
+	                </td>
+	                
+	           </tr>
+				
+				<tr>	
+				
+					<td>
+					
+					<table>
+					
+					<tr>
+					<td>
+					
+	                   <ui:insert name="side_navigation" >
+            			<ui:include src="Admin_Functions.xhtml" />
+        		    	</ui:insert>  
+        		    </td>	
+	               
+			
+				<td>
+				
+				<table>
+				
+					<tr>  
+	                    <td><h:outputText value="Category Id" /></td>  
+	                    <td>
+	                    <h:outputLabel value="#{productCategoryBean.newProductCategory.category}" />	
+						<h:inputHidden value="#{productCategoryBean.newProductCategory.category}"/>
+						</td> 
+               		</tr>
+               		 
+               		<tr>  
+	                    <td><h:outputText value="Product Category Name:" /></td>  
+	                    <td><h:inputText id="pName" value="#{productCategoryBean.newProductCategory.name}"  
+	                            required="true" requiredMessage="Please enter product Category name" /></td>  
+	                    <td><h:message for="pName" style="color:red" /></td>  
+	                </tr>
+	                
+	                <tr>  
+	                    <td><h:outputText value="Product Category Description:" /></td>  
+	                    <td><h:inputText id="pcDesc" value="#{productCategoryBean.newProductCategory.description}"  
+	                            required="true" requiredMessage="Please enter product Category name" /></td>  
+	                    <td><h:message for="pName" style="color:red" /></td>  
+	                </tr>
+
+                 </table>
+                
+                </td>
+                </tr>	
+                
+               <tr>  
+                    	<td />  
+                    	<td align="center"><h:commandButton value="Save" action="#{productCategoryBean.addNewProduct}" /></td>  
+                	</tr> 
+                			
+				
+				</table>
+				</td>
+				</tr>
+				</table>
+				
+		
+		</h:form>
+			
+	</f:view>
+
+
+</h:body>
+
+
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"> 
+
+<h:head>
+<title>Welcome to Pet Shop Supplies</title>
+</h:head>
+ 
+<body align = "center"> 
+
+<h2 align="center"><h:outputText value="#{msg['welcome_message']}" /></h2>
+
+ <f:view>
+        <h:form  >
+            
+	<tr >
+	
+		<td>
+	
+		<h3><h:outputText value="#{msg['search_message']}" /></h3>
+          <h:selectOneMenu value="#{productManagerBean.productCategory}">
+            
+            <f:selectItems value="#{productManagerBean.availableProducts}" var="pc" itemLabel="#{pc.name}" itemValue="#{pc.category}" />
+            
+          </h:selectOneMenu>
+            
+          <h:inputText value='#{productManagerBean.productName}'/>
+          <h:commandButton action="#{productManagerBean.searchForProduct}" value="Search"/>
+          
+          </td>
+          
+          <td>
+          
+          
+          </td>
+    </tr>
+       
+        </h:form>
+  </f:view>
+
+
+</body> 
+</html>
